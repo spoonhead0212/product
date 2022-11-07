@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+/* font-family: 'Fraunces', serif; */
+
+
+:root {
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+    --Font-size: 13px;
+    --bigger-font: 35px;
+    --fontWeight: 500;
+    --fontWeightThick: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    background-color: var(--Cream);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+section {
+    width: clamp(300px, 50vw, 700px);
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+picture > .pro-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: 200ms all;
+}
+
+.change {
+    width: 100%;
+    height: 100%;
+}
+
+.pro-mob {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.pro-details {
+    background-color: var(--White);
+    padding: 1.3rem 2rem 1.3rem 1.3rem;
+}
+
+.pro-prev {
+    text-transform: uppercase;
+    color: var(--Dark-grayish-blue);
+    font-size: var(--Font-size);
+    letter-spacing: 2px;
+    font-weight: var(--fontWeight);
+}
+
+.pro-details h1 {
+    width: 70%;
+    font-family: 'Fraunces', serif;
+    font-weight: var(--fontWeightThick);
+    line-height: 1;
+    font-size: var(--bigger-font);
+    margin-block: 1rem;
+}
+
+.pro-details p {
+    width: 90%;
+    color: var(--Dark-grayish-blue);
+    font-size: var(--Font-size);
+    font-weight: var(--fontWeight);
+    line-height: 1.7;
+}
+
+.pro-price {
+    color: var(--Dark-cyan);
+    font-size: 30px;
+    line-height: 2;
+    font-family: 'Fraunces', serif;
+}
+
+.pro-slash {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: var(--Dark-grayish-blue);
+}
+
+.pro-btn {
+    display: inline-flex;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    background-color: var(--Dark-cyan);
+    color: var(--White);
+    padding: .8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: var(--Font-size);
+    font-weight: var(--fontWeightThick);
+    text-transform: uppercase;
+    transform: 500ms ease-in-out;
+}
+
+.pro-btn::before {
+    content: url(images/icon-cart.svg);
+    display: flex;
+    align-items: center;
+}
+
+.pro-btn:hover {
+    background-color: var(--Very-dark-blue);
+}
+
+@media screen and (max-width: 1000px) {
+    
+    main {
+        padding-block: 2rem;
+        width: unset;
+        height: unset;
+    }
+
+    section {
+        margin-bottom: 2rem;
+        margin-inline: auto;
+        flex-direction: column;
+    }
+
+    .pro-details :is(h1, p) {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+
+    .pro-details {
+        padding: 1.3rem;
+    }
+
+    .pro-price {
+        font-size: 25px;
+    }
+
+    .pro-details h1 {
+        font-size: 25px;
+    }
+
+
+    
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
